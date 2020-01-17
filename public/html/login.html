@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#footer").load("html/footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+    </header>
+    <main>
+        <div class="tab-content">
+            <h1>Welcome</h1>
+            <div class="field-wrap">
+                <label>
+                    Username</br>
+                </label>
+                <input type="email" id="inputUsername" required autocomplete="off" />
+            </div>
+            <div class="field-wrap">
+                <label>
+                    Password</br>
+                </label>
+                <input type="password" id="inputPassword" required autocomplete="off" />
+            </div>
+            </br>
+            </br>
+            </br>
+
+            <button onclick="login()" id="loginButton" class="brk-btn">
+                Log in
+            </button>
+            <button onclick="signup()" id="signInButton" class="brk-btn">
+                Sign up
+            </button>
+        </div>
+
+    </main>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</body>
+<js>
+    <script type="text/javascript" src="js/login.js"></script>
+</js>
+
+</html>

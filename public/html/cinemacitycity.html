@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#footer").load("html/footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="css/book.css">
+    <link rel="stylesheet" href="css/citycinemacity.css">
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+    </header>
+    <main>
+        <div class="space"></div>
+        <h1>Locations</h1>
+        <div class="drop">
+            <div class="option active placeholder" data-value="placeholder">
+                Choose city
+            </div>
+            {{for data}}
+            <div class="option" data-value="test">
+                {{>cityName}}
+            </div>
+            {{/for}}
+            <button onclick="bookDate()" id="bookBtn" class="brk-btn">
+                Book a Date!
+            </button>
+        </div>
+
+    </main>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</body>
+<js>
+    <script src="js/book.js"></script>
+    <script src="js/citycinemacity.js"></script>
+</js>
+
+</html>

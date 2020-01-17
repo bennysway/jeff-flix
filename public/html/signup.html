@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://www.jsviews.com/download/jsrender.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#head").load("html/head.html");
+            $("#footer").load("html/footer.html");
+            $("#showcase").load("html/components/showcase.html");
+            $("#moviecard").load("html/components/moviecard.html");
+        });
+        function onImgError(source) {
+            source.src = "placeholder.jpg";
+            return true;
+        }
+    </script>
+    <div id="head"></div>
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+    </header>
+    <main>
+        <div class="tab-content">
+            <div style="width: 50%;  float: left; ">
+                <div class="field-wrap">
+                    <label>
+                        Username</br>
+                    </label>
+                    <input type="email" id="inputUsername" required autocomplete="off" />
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Username</br>
+                    </label>
+                    <input type="email" id="inputUsername" required autocomplete="off" />
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Username</br>
+                    </label>
+                    <input type="email" id="inputUsername" required autocomplete="off" />
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Username</br>
+                    </label>
+                    <input type="email" id="inputUsername" required autocomplete="off" />
+                </div>
+                
+            </div>
+            <div id="list" style="width: 50%; height: 400px; float: right;">
+
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</body>
+<js>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/cookiehandler.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+</js>
+
+</html>

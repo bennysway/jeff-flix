@@ -1,0 +1,24 @@
+{
+  "name": "jeff-flix",
+  "version": "1.0.0",
+  "description": "Cinema Booking App",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "jeff",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "jquery": "^3.4.1",
+    "js-cookie": "^2.2.1",
+    "jsrender": "^1.0.5",
+    "lowdb": "^1.0.0",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.1",
+    "request": "^2.88.0"
+  }
+}

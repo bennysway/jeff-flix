@@ -1,0 +1,116 @@
+body {
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background: #000;
+}
+
+main {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.space {
+    height: 120px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.showcase {
+    min-height: 300px;
+}
+
+.showcase img {
+    width: 100%;
+}
+
+.showcase h1 {
+    font-size: 300%;
+}
+
+h3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.center-left {
+    position: relative;
+    z-index: 1;
+    top: 100%;
+    left: 100%;
+    padding: 40px;
+    margin-bottom: -342px;
+    transform: translate(-100%, -100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5690651260504201) 20%, rgba(0, 0, 0, 0.7147233893557423) 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+input {
+    width: 170px;
+    box-sizing: border-box;
+    margin: 10px;
+    color: white;
+    border: 2px solid rgb(97, 0, 0);
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: transparent;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+
+input:focus {
+    width: 200px;
+}
+
+.brk-btn {
+    position: relative;
+    background: none;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 0.2em solid rgb(97, 0, 0);
+    padding: 0.5em 1em;
+}
+
+.brk-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: red;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: red;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn:hover::before {
+    right: 80%;
+}
+
+.brk-btn:hover::after {
+    left: 80%;
+}

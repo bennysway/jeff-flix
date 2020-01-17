@@ -1,0 +1,113 @@
+.tab-content {
+  padding: 150px;
+}
+
+html {
+  background: rgb(124, 0, 0);
+  background: linear-gradient(0deg, rgb(68, 0, 0) 0%, rgba(0, 0, 0, 1) 45%, rgb(68, 0, 0) 100%);
+}
+
+.cinemaItem {
+  padding: 3px;
+  background-color: rgba(68, 0, 0, 0.226);
+  transition: 1s;
+}
+.cinemaItem:hover{
+  background-color: rgba(68, 0, 0, 0.562);
+
+}
+
+.order-alpha {
+  width: 330px;
+  box-sizing: border-box;
+  margin: 10px;
+  color: white;
+  border: 2px solid rgb(97, 0, 0);
+  border-radius: 4px;
+  font-size: 22px;
+  background-color: transparent;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+option {
+  color: #911;
+  background-color: #400;
+}
+
+option:hover {
+  color: #999;
+}
+
+input[type=email]:focus {
+  width: 30%;
+}
+
+input[type=password] {
+  width: 130px;
+  box-sizing: border-box;
+  color: white;
+  margin: 10px;
+  border: 2px solid rgb(97, 0, 0);
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: transparent;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.3s ease-in-out;
+}
+
+input[type=password]:focus {
+  width: 30%;
+}
+
+.brk-btn {
+  position: relative;
+  background: none;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid rgb(97, 0, 0);
+  padding: 0.5em 1em;
+}
+
+.brk-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: red;
+  height: 0.3em;
+  right: 20%;
+  top: -0.21em;
+  transform: skewX(-45deg);
+  -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: red;
+  height: 0.3em;
+  left: 20%;
+  bottom: -0.25em;
+  transform: skewX(45deg);
+  -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.brk-btn:hover::before {
+  right: 80%;
+}
+
+.brk-btn:hover::after {
+  left: 80%;
+}

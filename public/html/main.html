@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://www.jsviews.com/download/jsrender.min.js"></script>
+	<script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#head").load("html/head.html");
+            $("#footer").load("html/footer.html");
+            $("#showcase").load("html/components/showcase.html");
+            $("#moviecard").load("html/components/moviecard.html");
+        });
+        function onImgError(source) {
+            source.src = "placeholder.jpg";
+            return true;
+        }
+	</script>
+	<div id="head"></div>
+</head>
+
+<body>
+	<header>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/header.css">
+		<link rel="stylesheet" href="css/footer.css">
+		<link rel="stylesheet" href="css/home.css">
+	</header>
+	{{:main}}
+	<footer>
+		<p class="footer">© Student Project 2019/20</p>
+		<script>
+    function imgError(image) {
+    image.onerror = "";
+    image.src = "placeholder.jpg";
+    return true;
+}
+		</script>
+	</footer>
+</body>
+<js>
+	<script type="text/javascript" src="js/header.js"></script>
+	<script type="text/javascript" src="js/cookiehandler.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+</js>
+
+</html>

@@ -1,0 +1,34 @@
+{
+    "users": [
+        {
+            "id":1,
+            "username": "test",
+            "password": "lowdb is awesome",
+            "bookings": []
+        }
+    ],
+    "bookings": [
+        {
+            "id": 1,
+            "bookingData": {
+                "city": 0,
+                "time": "null",
+                "date": 0,
+                "movieID": 0,
+                "seatRow": 0,
+                "seatNumber": 0,
+                "movieName": "null",
+                "ticketType": 0,
+                "ticketAmount": 0
+            }
+        }
+    ],
+    "contactDetails" : [
+        {
+            "id":1,
+            "data":{
+                
+            }
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://www.jsviews.com/download/jsrender.min.js"></script>
+    <script type="text/javascript" src="js/cookiehandler.js"></script>
+
+    <script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#head").load("html/head.html");
+            $("#footer").load("html/footer.html");
+            $("#showcase").load("html/components/showcase.html");
+            $("#moviecard").load("html/components/moviecard.html");
+        });
+        function onImgError(source) {
+            source.src = "placeholder.jpg";
+            return true;
+        }
+    </script>
+    <div id="head"></div>
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+    </header>
+    <main>
+        <div class="showcase">
+            <img src="https://image.tmdb.org/t/p/original{{:moviesArray1[0].backdrop_path}}" id="showcaseImage"
+                class="lozad" alt="test image">
+            <div class="center-left">
+                <h1 id="showcaseTitle">{{:moviesArray1[0].original_title}}</h1>
+                <p id="showcaseOverview">{{:moviesArray1[0].overview}}</p>
+                <p id="showcaseRatings">{{:moviesArray1[0].vote_average}}</p>
+                <p id="showcaseReleased">{{:moviesArray1[0].release_date}}</p>
+                <p id="showcaseLanguage">{{:moviesArray1[0].original_language}}</p>
+                <a id="showcasePreview" href="/preview?id={{:moviesArray1[0].id}}"
+                    class="btn btn-white btn-animate">Preview </a>
+                    <a id="showcaseBook"  href="/book?id={{:moviesArray1[0].id}}&name={{:moviesArray1[0].original_title}}"
+                    class="btn btn-white btn-animate">Book </a>                <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:moviesArray1[0].original_title}}"
+                class="btn btn-white btn-animate">Trailer </a>
+                <a id="showcaseWishList" class="btn btn-white btn-animate">Wish List</a>
+            </div>
+        </div>
+        <h3>Trending Now</h3>
+        <div id="trendingContainer" class="scrolling-wrapper">
+            {{for moviesArray1 start=0 end=11}}
+            <a href="/preview?id={{:id}}">
+                <div class="card">
+                    <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
+                        onerror="imgError(this);">
+                    <div class="container">
+                        {{:original_title}} </br>
+                        {{:vote_average}} </br>
+                    </div>
+                </div>
+            </a>
+            {{/for}}
+        </div>
+        <h3>New Releases</h3>
+        <div id="releasesContainer" class="scrolling-wrapper">
+            {{for moviesArray1 start=11 end=20}}
+            <a href="/preview?id={{:id}}">
+                <div class="card">
+                    <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
+                        onerror="imgError(this);">
+                    <div class="container">
+                        {{:original_title}} </br>
+                        {{:vote_average}} </br>
+                    </div>
+                </div>
+            </a>
+            {{/for}}
+        </div>
+        <h3>Hot in Poland at the moment</h3>
+        <div class="showcase">
+            <img src="https://image.tmdb.org/t/p/original{{:moviesArray2[0].backdrop_path}}" id="showcaseImage"
+                class="lozad" alt="test image">
+            <div class="center-left">
+                <h1 id="showcaseTitle">{{:moviesArray2[0].original_title}}</h1>
+                <p id="showcaseOverview">{{:moviesArray2[0].overview}}</p>
+                <p id="showcaseRatings">{{:moviesArray2[0].vote_average}}</p>
+                <p id="showcaseReleased">{{:moviesArray2[0].release_date}}</p>
+                <p id="showcaseLanguage">{{:moviesArray2[0].original_language}}</p>
+                <a id="showcasePreview"  href="/preview?id={{:moviesArray2[0].id}}"
+                class="btn btn-white btn-animate">Preview </a>
+                <a id="showcaseBook"  href="/book?id={{:moviesArray2[0].id}}&name={{:moviesArray1[0].original_title}}"
+                class="btn btn-white btn-animate">Book </a>
+                <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:moviesArray2[0].original_title}}"
+                 class="btn btn-white btn-animate">Trailer </a>
+                <a id="showcaseWishList" class="btn btn-white btn-animate">Wish List</a>
+            </div>
+        </div>
+        <h3>In Local Cinemas</h3>
+        <div id="localTrendingContainer" class="scrolling-wrapper">
+            {{for moviesArray2 start=0 end=11}}
+            <a href="/preview?id={{:id}}">
+                <div class="card">
+                    <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
+                        onerror="imgError(this);">
+                    <div class="container">
+                        {{:original_title}} </br>
+                        {{:vote_average}} </br>
+                    </div>
+                </div>
+            </a>
+            {{/for}}
+        </div>
+        <h3>New Local Content</h3>
+        <div id="localReleasesContainer" class="scrolling-wrapper">
+            {{for moviesArray2 start=11 end=20}}
+            <a href="/preview?id={{:id}}">
+                <div class="card">
+                    <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
+                        onerror="imgError(this);">
+                    <div class="container">
+                        {{:original_title}} </br>
+                        {{:vote_average}} </br>
+                    </div>
+                </div>
+            </a>
+            {{/for}}
+        </div>
+    </main>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</body>
+<js>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+</js>
+
+</html>

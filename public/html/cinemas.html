@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="//geodata.solutions/includes/countrystatecity.js"></script>
+
+    <script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#footer").load("html/footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="css/cinemas.css">
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+    </header>
+    <main>
+        <div class="tab-content">
+            <div style="width: 50%;  float: left; ">
+                <h1>Choose a location</h1>
+                <select onchange="setCountry(this.options[this.selectedIndex].getAttribute('countryid'))" name="country" class="countries order-alpha" id="countryId">
+                    <option value="">Select Country</option>
+                </select>
+                </br>
+                <select name="state" class="states order-alpha" id="stateId">
+                    <option value="">Select State</option>
+                </select>
+                </br>
+                <select onchange="setCity(this.options[this.selectedIndex].getAttribute('value'))" name="city" class="cities order-alpha" id="cityId">
+                    <option value="">Select City</option>
+                </select>
+                </br>
+                </br>
+                </br>
+
+                <button onclick="search()" id="searchBtn" class="brk-btn">
+                    Search
+                </button>
+                <button onclick="clearAll()" id="ResetBtn" class="brk-btn">
+                    Reset
+                </button>
+            </div>
+            <div id="list" style="overflow-y: scroll; width: 50%; height: 400px; float: right;">
+        
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</body>
+<js>
+    <script type="text/javascript" src="js/cinemas.js"></script>
+</js>
+
+</html>

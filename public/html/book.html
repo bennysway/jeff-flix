@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#footer").load("html/footer.html");
+        });
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="css/book.css">
+</head>
+
+<body>
+    <header>
+        <div id="header"></div>
+    </header>
+    <main>
+        <div class="tab-content">
+            <div style="width: 50%;  float: left; ">
+                <div class="book-box">
+                    <div class="custom-select" style="width:200px;">
+                        <select id="selectCity" onchange="onSelectCity()">
+                            <option value="0">Choose city</option>
+                            {{for cities}}
+                            <option value="{{:value}}">{{:city}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="custom-select" style="width:200px;">
+                        <select id="selectDay" onchange="onSelectDay()">
+                            <option value="0">Choose Week Day</option>
+                            {{for weekdays}}
+                            <option value="{{:value}}">{{:name}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="custom-select" style="width:200px;">
+                        <select id="selectTime" onchange="onSelectTime()">
+                            <option value="0">Choose Time</option>
+                            {{for time}}
+                            <option value="{{:value}}">{{:name}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="field-wrap">
+                        <label>
+                            Time:</br>
+                        </label>
+                        <input type="time" id="customTime" autocomplete="off" />
+                    </div>
+                    <br />
+                    <div class="custom-select" style="width:200px;">
+                        <select id="selectTicketType" onchange="onSelectTickeType()">
+                            <option value="0">Choose Ticket Type</option>
+                            {{for ticketType}}
+                            <option value="{{:value}}">{{:name}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="field-wrap">
+                        <label id="seatLabel">
+                            Number of Tickets:</br>
+                        </label>
+                        <input type="number" id="ticketAmount" value="1" min="1" max="10" autocomplete="off" />
+                    </div>
+                    <br />
+                    <div class="custom-select" style="width:200px;">
+                        <select id="selectSeat" onchange="onSelectSeatRow()">
+                            <option value="0">Choose Seat</option>
+                            {{for seatRow}}
+                            <option value="{{:value}}">{{:name}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="field-wrap">
+                        <label id="seatLabel">
+                            Seat Number:</br>
+                        </label>
+                        <input type="number" value="1" min="1" max="100" onchange="" id="inputSeatNumber" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div id="list" style="width: 50%; height: 400px; float: right;">
+                Book
+                <h1>{{:movieName}}</h1>
+                Now!
+            </div>
+            <button style="width: 300px;" onclick="book()" id="searchBtn" class="brk-btn">
+                Book
+            </button>
+
+        </div>
+    </main>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+</body>
+<js>
+    <script type="text/javascript" src="js/cookiehandler.js"></script>
+    <script type="text/javascript" src="js/book.js"></script>
+    <script type="text/javascript" src="js/bookinglistener.js"></script>
+</js>
+
+</html>
