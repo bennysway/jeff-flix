@@ -2,18 +2,34 @@
 <html lang="en">
 
 <head>
-    <!---->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://www.jsviews.com/download/jsrender.min.js"></script>
+    <script type="text/javascript" src="js/cookiehandler.js"></script>
+
+    <script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#head").load("html/head.html");
+            $("#footer").load("html/footer.html");
+        });
+        function onImgError(source) {
+            source.src = "placeholder.jpg";
+            return true;
+        }
+    </script>
+    <div id="head"></div>
 </head>
 
 <body>
     <header>
-        <!---->
+        <div id="header"></div>
     </header>
     <main>
-        <!---->
+        {{for bookings}}
+        {{/bookings}}
     </main>
     <footer>
-        <!---->
+        <div id="footer"></div>
     </footer>
 </body>
 

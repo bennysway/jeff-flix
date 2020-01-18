@@ -13,6 +13,8 @@ var search = require('./app/search')
 var preview = require('./app/preview')
 var wishlist = require('./app/wishlist')
 var cinemacity = require('./app/citycinemacity')
+var bookingresult = require('./app/bookingresult')
+
 
 app.use('/',home)
 app.use('/book',book)
@@ -21,6 +23,7 @@ app.use('/signup',signup)
 app.use('/preview',preview)
 app.use('/wishlist',wishlist)
 app.use('/cinemacity',cinemacity)
+app.use('/bookingresult',bookingresult)
 app.use(express.static(__dirname + '/public'))
 
 const PORT = process.env.PORT || 8080

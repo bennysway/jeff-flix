@@ -92,7 +92,11 @@
                 </div>
             </div>
             <div id="list" style="width: 50%; height: 400px; float: right;">
+                {{if booking}}
+                Booking
+                {{else}}
                 Book
+                {{/if}}
                 <h1>{{:movieName}}</h1>
                 Now!
             </div>

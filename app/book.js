@@ -194,6 +194,7 @@ const time = [
         "value": 7
     }
 ]
+var booking = false
 const ticketType = [
     {
         "name": "Normal",
@@ -244,7 +245,9 @@ router.get('/', function (req, res) {
         time: time,
         ticketType: ticketType,
         seatRow: seatRow,
-        movieName: movieName
+        movieName: movieName,
+        booking: booking,
+        movieId: movieId
     })
     res.send(html)
 });
