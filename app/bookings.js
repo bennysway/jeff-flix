@@ -240,16 +240,14 @@ const seatRow = [
 router.use(cookieParser())
 
 router.get('/', function (req, res) {
-    var hasBooking = false
     var bookings = {}
     var cookie = req.cookies.bookings
     if (cookie != "") {
-        hasBooking = true
         bookings = JSON.parse(cookie)
         bookings = sanitizeBooking(bookings)
     }
     const tmpl = jsrender.templates('./public/html/bookings.html');
-    const html = tmpl.render({ bookings: bookings, hasBooking: hasBooking })
+    const html = tmpl.render({ bookings: bookings, hasBooking: false })
     res.send(html)
 });
 function sanitizeBooking(bookings) {

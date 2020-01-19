@@ -29,11 +29,11 @@
         <div class="space"></div>
         <h1>My Bookings</h1>
         <div class="conatiner">
-            {{if hasBooking}}
             <div class="wrap">
                 {{for bookings}}
                 <a href="https://www.cinema-city.pl/search?query={{:movieName}}">
-                    <div class="box one" style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster}}');">
+                    <div class="box one"
+                        style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster}}');">
                         <div class="date">
                             <h4>{{:date}}@{{:time}}</h4>
                         </div>
@@ -43,10 +43,9 @@
                         </div>
                     </div>
                 </a>
+
                 {{/for}}
             </div>
-            {{else}}
-            <h1>No Bookings Made</h1>
         </div>
 
         <!-- FOLLOW -->
