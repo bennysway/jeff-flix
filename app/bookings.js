@@ -1,5 +1,6 @@
 var express = require('express')
-var jsrender = require('jsrender');
+var jsrender = require('jsrender')
+var cookieParser = require('cookie-parser')
 var router = express.Router()
 
 const cities = [
@@ -235,23 +236,32 @@ const seatRow = [
     }
 ]
 
+
+router.use(cookieParser())
+
 router.get('/', function (req, res) {
-    var movieId = req.query.id
-    var movieName = req.query.name
-    var poster_path = req.query.poster_path
-    const tmpl = jsrender.templates('./public/html/book.html');
-    const html = tmpl.render({
-        cities: cities,
-        weekdays: weekdays,
-        time: time,
-        ticketType: ticketType,
-        seatRow: seatRow,
-        movieName: movieName,
-        booking: booking,
-        movieId: movieId,
-        poster: poster_path
-    })
+    var bookings = {}
+    var cookie = req.cookies.bookings
+    if (cookie != "") {
+        bookings = JSON.parse(cookie)
+        bookings = sanitizeBooking(bookings)
+    }
+    const tmpl = jsrender.templates('./public/html/bookings.html');
+    const html = tmpl.render({ bookings: bookings })
     res.send(html)
 });
+function sanitizeBooking(bookings) {
+    var m = bookings
+    var i;
+    
+    for (i = 0; i < m.length; i++) {
+
+        m[i].city = cities.find(x => x.value == m[i].city).city
+        m[i].date = weekdays.find(weekdays => weekdays.value == m[i].date).name
+        m[i].seatRow = seatRow.find(seatRow => seatRow.value == m[i].seatRow).name
+    }
+    
+    return m
+}
 
 module.exports = router;

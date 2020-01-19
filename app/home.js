@@ -12,7 +12,6 @@ let url2 = "https://api.themoviedb.org/3/discover/movie?api_key=d4c2d2239d0577b9
 let settings = { method: "Get" }
 
 router.get('/', function (req, res) {
-    var user = getUser()
     fetch(url1, settings)
         .then(res => res.json())
         .then((moviesArray1) => {
@@ -22,8 +21,7 @@ router.get('/', function (req, res) {
                     const tmpl = jsrender.templates('./public/html/home.html');
                     const html = tmpl.render({
                         moviesArray1: moviesArray1.results,
-                        moviesArray2: moviesArray2.results,
-                        user: user
+                        moviesArray2: moviesArray2.results
                     })
                     res.send(html)
                 })
@@ -35,38 +33,4 @@ router.get('/', function (req, res) {
             res.send(html)
         })
 })
-
-function getUser() {
-    var user = {}
-    var cookie = cookies.get('userCookie')
-    if (cookie != undefined) {
-        var userCookie = JSON.parse(cookies.get('userCookie'))
-        if (userCookie.zita != "") {
-            if (userCookie.pfura != "") {
-                var testPass = db.get('users').find({ username: userCookie.zita }).value()
-                console.log(testPass)
-                if (testPass.password == userCookie.pfura) {
-                    cookies.set('userCookie', JSON.stringify({ zita: username, pfura: "", logged: true }))
-                    var details = db.get('contactDetails').find({ id: testPass.id }).value()
-                    user = {
-                        name: details.name
-                    }
-                } else {
-                    alert("Wrong Password.")
-                }
-            } else if (userCookie.logged == true) {
-                var testPass = db.get('users').find({ username: userCookie.zita }).value()
-                console.log(testPass)
-                var details = db.get('contactDetails').find({ id: testPass.id }).value()
-                user = {
-                    name: details.name
-                }
-            }
-        }
-    } else {
-        console.log("no user cookie")
-    }
-
-    return user
-}
 module.exports = router;

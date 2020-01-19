@@ -18,6 +18,7 @@
         }
     </script>
     <div id="head"></div>
+    <link rel="stylesheet" href="css/bookings.css">
 </head>
 
 <body>
@@ -25,12 +26,40 @@
         <div id="header"></div>
     </header>
     <main>
-        {{for bookings}}
-        {{/bookings}}
+        <div class="space"></div>
+        <h1>My Bookings</h1>
+        <div class="conatiner">
+            <div class="wrap">
+                {{for bookings}}
+                <a href="https://www.cinema-city.pl/search?query={{:movieName}}">
+                    <div class="box one"
+                        style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster}}');">
+                        <div class="date">
+                            <h4>{{:date}}@{{:time}}</h4>
+                        </div>
+                        <div class="mtext">
+                            <h4>{{:movieName}}</h4>
+                            <h5>{{:seatRow}}</h5>
+                        </div>
+                    </div>
+                </a>
+
+                {{/for}}
+            </div>
+        </div>
+
+        <!-- FOLLOW -->
+        <a class="Follow" href="https://codepen.io/ZaynAlaoudi/" target="blank_"></a>
+
+
     </main>
     <footer>
         <div id="footer"></div>
     </footer>
 </body>
+<js>
+    <script type="text/javascript" src="js/cookiehandler.js"></script>
+    <script type="text/javascript" src="js/bookings.js"></script>
+</js>
 
 </html>

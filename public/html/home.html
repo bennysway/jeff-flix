@@ -38,22 +38,24 @@
                 <p id="showcaseLanguage">{{:moviesArray1[0].original_language}}</p>
                 <a id="showcasePreview" href="/preview?id={{:moviesArray1[0].id}}"
                     class="btn btn-white btn-animate">Preview </a>
-                    <a id="showcaseBook"  href="/book?id={{:moviesArray1[0].id}}&name={{:moviesArray1[0].original_title}}"
-                    class="btn btn-white btn-animate">Book </a>                <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:moviesArray1[0].original_title}}"
+                    <a id="showcaseBook"  href="/book?id={{:moviesArray1[0].id}}&name={{:moviesArray1[0].original_title}}&poster_path={{:moviesArray1[0].poster_path}}"
+                    class="btn btn-white btn-animate">Book </a>                
+                    <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:moviesArray1[0].original_title}}"
                 class="btn btn-white btn-animate">Trailer </a>
-                <a id="showcaseWishList" class="btn btn-white btn-animate">Wish List</a>
+                <a id="showcaseWishList"  class="btn btn-white btn-animate">Wish List</a>
             </div>
         </div>
         <h3>Trending Now</h3>
         <div id="trendingContainer" class="scrolling-wrapper">
             {{for moviesArray1 start=0 end=11}}
             <a href="/preview?id={{:id}}">
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
-                        onerror="imgError(this);">
-                    <div class="container">
-                        {{:original_title}} </br>
-                        {{:vote_average}} </br>
+                <div class="box one"
+                    style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster_path}}');">
+                    <div class="date">
+                        <h4>{{:vote_average}}✰</h4>
+                    </div>
+                    <div class="mtext">
+                        {{:original_title}}
                     </div>
                 </div>
             </a>
@@ -63,12 +65,13 @@
         <div id="releasesContainer" class="scrolling-wrapper">
             {{for moviesArray1 start=11 end=20}}
             <a href="/preview?id={{:id}}">
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
-                        onerror="imgError(this);">
-                    <div class="container">
-                        {{:original_title}} </br>
-                        {{:vote_average}} </br>
+                <div class="box one"
+                    style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster_path}}');">
+                    <div class="date">
+                        <h4>{{:vote_average}}✰</h4>
+                    </div>
+                    <div class="mtext">
+                        {{:original_title}}
                     </div>
                 </div>
             </a>
@@ -81,12 +84,12 @@
             <div class="center-left">
                 <h1 id="showcaseTitle">{{:moviesArray2[0].original_title}}</h1>
                 <p id="showcaseOverview">{{:moviesArray2[0].overview}}</p>
-                <p id="showcaseRatings">{{:moviesArray2[0].vote_average}}</p>
+                <p id="showcaseRatings">{{:moviesArray2[0].vote_average}}✰</p>
                 <p id="showcaseReleased">{{:moviesArray2[0].release_date}}</p>
                 <p id="showcaseLanguage">{{:moviesArray2[0].original_language}}</p>
                 <a id="showcasePreview"  href="/preview?id={{:moviesArray2[0].id}}"
                 class="btn btn-white btn-animate">Preview </a>
-                <a id="showcaseBook"  href="/book?id={{:moviesArray2[0].id}}&name={{:moviesArray1[0].original_title}}"
+                <a id="showcaseBook"  href="/book?id={{:moviesArray2[0].id}}&name={{:moviesArray1[0].original_title}}&poster_path={{:moviesArray2[0].poster_path}}"
                 class="btn btn-white btn-animate">Book </a>
                 <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:moviesArray2[0].original_title}}"
                  class="btn btn-white btn-animate">Trailer </a>
@@ -97,12 +100,13 @@
         <div id="localTrendingContainer" class="scrolling-wrapper">
             {{for moviesArray2 start=0 end=11}}
             <a href="/preview?id={{:id}}">
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
-                        onerror="imgError(this);">
-                    <div class="container">
-                        {{:original_title}} </br>
-                        {{:vote_average}} </br>
+                <div class="box one"
+                    style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster_path}}');">
+                    <div class="date">
+                        <h4>{{:vote_average}}✰</h4>
+                    </div>
+                    <div class="mtext">
+                        {{:original_title}}
                     </div>
                 </div>
             </a>
@@ -112,12 +116,13 @@
         <div id="localReleasesContainer" class="scrolling-wrapper">
             {{for moviesArray2 start=11 end=20}}
             <a href="/preview?id={{:id}}">
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
-                        onerror="imgError(this);">
-                    <div class="container">
-                        {{:original_title}} </br>
-                        {{:vote_average}} </br>
+                <div class="box one"
+                    style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster_path}}');">
+                    <div class="date">
+                        <h4>{{:vote_average}}✰</h4>
+                    </div>
+                    <div class="mtext">
+                        {{:original_title}}
                     </div>
                 </div>
             </a>
@@ -131,6 +136,7 @@
 <js>
     <script type="text/javascript" src="js/header.js"></script>
     <script type="text/javascript" src="js/home.js"></script>
+    <script type="text/javascript" src="js/bookings.js"></script>
 </js>
 
 </html>
