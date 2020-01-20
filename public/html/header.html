@@ -4,21 +4,4 @@
     </a>
     <a href="/">Home</a>
     <a href="/bookings">My Bookings</a>
-    <input type="search" id="customSearch" onclick="search()" placeholder="Search" autocomplete="on" />
-</div>
-<script>
-    document.getElementById("customSearch")
-        .addEventListener("keyup", function (event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                document.getElementById("customSearch").onclick();
-            }
-        });
-
-        function search(){
-            var query = document.getElementById('customSearch').value
-            if(query != ""){
-                window.location.href = "/search?search=" + query
-            }
-        }
-</script>
+\</div>
