@@ -3,22 +3,22 @@
         <img src="jfLogo.png" alt="logo" />
     </a>
     <a href="/">Home</a>
-    <a href="/bookings">My Bookings</a>   
-    <input type="search" id="customSearch" placeholder="Search" autocomplete="on" />
-    <div class="usernav">
-        <div class="dropdown">
-            <a href="/account">Account</a>
-            <div class="dropdown-content">
-                <a href="login">Login</a>
-                <a href="signup">Sign Up</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">Language</a>
-            <div class=" dropdown-content">
-                <a href="#pl">Polski</a>
-                <a href="#">English</a>
-            </div>
-        </div>
-    </div>
+    <a href="/bookings">My Bookings</a>
+    <input type="search" id="customSearch" onclick="search()" placeholder="Search" autocomplete="on" />
 </div>
+<script>
+    document.getElementById("customSearch")
+        .addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("customSearch").onclick();
+            }
+        });
+
+        function search(){
+            var query = document.getElementById('customSearch').value
+            if(query != ""){
+                window.location.href = "/search?search=" + query
+            }
+        }
+</script>

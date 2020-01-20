@@ -13,6 +13,7 @@ router.get('/', function (req, res) {
             const html = tmpl.render({ movie: movie })
             res.send(html)
         })
+        
 });
 
 module.exports = router;

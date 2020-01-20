@@ -32,13 +32,14 @@
                 <p id="showcaseRatings">Rating: {{:movie.vote_average}}</p>
                 <p id="showcaseReleased">Released: {{:movie.release_date}}</p>
                 <p id="showcaseLanguage">Language: {{:movie.original_language}}</p>
-                <a id="showcaseBook" href="/book?id={{:movie.id}}&name={{:movie.original_title}}&poster_path={{:movie.poster_path}}" class="btn btn-white btn-animate">Book </a>
+                <a id="showcaseBook"
+                    href="/book?id={{:movie.id}}&name={{:movie.original_title}}&poster_path={{:movie.poster_path}}"
+                    class="btn btn-white btn-animate">Book </a>
                 <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:movie.original_title}}"
                     class="btn btn-white btn-animate">Trailer </a>
-                <a id="showcaseWishList" class="btn btn-white btn-animate">Wish List</a>
             </div>
         </div>
-
+    
         <div class="container">
             <h2>Finances</h2>
             <p>Budget: ${{:movie.budget}}</p>
@@ -48,6 +49,7 @@
             <p>Website: <a href="{{:movie.homepage}}">{{:movie.homepage}}</a></p>
             <p>Status: {{:movie.status}}</p>
         </div>
+        
     </main>
     <footer>
         <div id="footer"></div>

@@ -8,7 +8,8 @@ let bookingData = {
     movieName: "null",
     ticketType: 0,
     ticketAmount: 0,
-    poster:""
+    poster:"",
+    bookingId:0
 }
 function onSelectCity() {
     let select = document.getElementById('selectCity')
@@ -59,23 +60,29 @@ function onSelectTime() {
 function onSelectTickeType() {
     let select = document.getElementById('selectTicketType')
     let value = select.options[select.selectedIndex].value
+    let inputN = document.getElementById('inputTicketAmount')
+    inputN.value = 1
+    updateTicketAmount(inputN.value)
     updateTicketType(value)
 }
 function onSelectSeat() {
     let select = document.getElementById('selectSeat')
     let value = select.options[select.selectedIndex].value
+    let inputN = document.getElementById('inputSeatNumber')
+    inputN.value = value * 7 / 3 * 2
     updateSeat(value)
 }
 function onSelectSeatRow() {
     let select = document.getElementById('selectSeat')
     let value = select.options[select.selectedIndex].value
-
+    let inputN = document.getElementById('inputSeatNumber')
+    inputN.value = Math.floor(value * 7 / 3 * 2)
+    updateSeatNumber(inputN.value)
     updateTicketRow(value)
 }
 function onInputSeatNumber() {
     let input = document.getElementById('inputSeatNumber')
     let value = input.value
-
     updateSeatNumber(value)
 }
 function onInputTicketAmount() {
@@ -130,7 +137,8 @@ function getFields() {
     bookingData.movieID = id
     bookingData.movieName = name
     bookingData.poster = poster
-    console.log(poster);
+    bookingData.bookingId = getRandomInt(100,1000000)
+
     if (bookingData.city == 0) {
         alert("Please choose city")
         return false
@@ -173,4 +181,10 @@ function getQueryParams(qs) {
         params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
     }
     return params;
+}
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

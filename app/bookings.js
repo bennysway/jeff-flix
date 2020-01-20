@@ -190,7 +190,7 @@ const time = [
     }, {
         "name": "Late Night",
         "value": 6
-    },{
+    }, {
         "name": "Custom",
         "value": 7
     }
@@ -218,19 +218,19 @@ const seatRow = [
     {
         "name": "Front Row",
         "value": 1
-    },{
+    }, {
         "name": "First Quarter",
         "value": 2
-    },{
+    }, {
         "name": "Mid",
         "value": 3
-    },{
+    }, {
         "name": "Premium",
         "value": 4
-    },{
+    }, {
         "name": "Back Row",
         "value": 5
-    },{
+    }, {
         "name": "Custom",
         "value": 6
     }
@@ -240,27 +240,34 @@ const seatRow = [
 router.use(cookieParser())
 
 router.get('/', function (req, res) {
-    var bookings = {}
-    var cookie = req.cookies.bookings
-    if (cookie != "") {
-        bookings = JSON.parse(cookie)
-        bookings = sanitizeBooking(bookings)
+    var bookings = []
+    try {
+        var cookie = req.cookies.bookings
+        if (cookie != "") {
+            bookings = JSON.parse(cookie)
+            bookings = sanitizeBooking(bookings)
+        }
+        const tmpl = jsrender.templates('./public/html/bookings.html');
+        const html = tmpl.render({ bookings: bookings })
+        res.send(html)
+    } catch {
+        const tmpl = jsrender.templates('./public/html/bookings.html');
+        const html = tmpl.render({ bookings: [] })
+        res.send(html)
     }
-    const tmpl = jsrender.templates('./public/html/bookings.html');
-    const html = tmpl.render({ bookings: bookings, hasBooking: false })
-    res.send(html)
+
 });
 function sanitizeBooking(bookings) {
     var m = bookings
     var i;
-    
+
     for (i = 0; i < m.length; i++) {
 
         m[i].city = cities.find(x => x.value == m[i].city).city
         m[i].date = weekdays.find(weekdays => weekdays.value == m[i].date).name
         m[i].seatRow = seatRow.find(seatRow => seatRow.value == m[i].seatRow).name
     }
-    
+
     return m
 }
 

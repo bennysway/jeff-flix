@@ -2,7 +2,7 @@
 	min-height: 300px;
 }
 
-.container{
+.container {
 	padding: 30px;
 	background: #000;
 	background: linear-gradient(0deg, rgb(32, 0, 0) 0%, rgb(0, 0, 0) 100%);
@@ -11,11 +11,13 @@
 .showcase img {
 	width: 100%;
 }
-.btn-container{
+
+.btn-container {
 	width: 100%;
 	display: table;
 }
-.btn-container a{
+
+.btn-container a {
 	display: table-cell;
 }
 
@@ -57,7 +59,7 @@ h2 {
 }
 
 .scrolling-wrapper .card:hover {
-	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgb(255, 0, 0) 100%);
+	background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(255, 0, 0) 100%);
 	/*padding: 2px 16px;*/
 }
 
