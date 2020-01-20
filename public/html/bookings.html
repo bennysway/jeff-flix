@@ -35,18 +35,15 @@
         <div id="cards" class="conatiner">
             <div class="wrap">
                 {{for bookings}}
-                <a href="https://www.cinema-city.pl/search?query={{:movieName}}">
-                    <div class="box one" style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster}}');">
-                        <div class="date">
-                            <h4>{{:date}}@{{:time}}</h4>
-                        </div>
-                        <div class="mtext">
-                            <h4>{{:movieName}}</h4>
-                            <h5>{{:seatRow}}</h5>
-                        </div>
+                <div class="box one" style=" background-image: url('https://image.tmdb.org/t/p/w342{{:poster}}');">
+                    <div class="date">
+                        <h4>{{:date}}@{{:time}}</h4>
                     </div>
-                </a>
-
+                    <div class="mtext">
+                        <h4>{{:movieName}}</h4>
+                        <h5>{{:seatRow}}</h5>
+                    </div>
+                </div>
                 {{/for}}
             </div>
         </div>
@@ -64,7 +61,6 @@
             </div>
             {{/for}}
         </div>
-
     </main>
     <footer>
         <div id="footer"></div>
