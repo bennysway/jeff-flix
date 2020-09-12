@@ -18,7 +18,7 @@
     "js-cookie": "^2.2.1",
     "jsrender": "^1.0.5",
     "lowdb": "^1.0.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "nodemon": "^2.0.1",
     "request": "^2.88.0",
     "zombie": "^6.1.4"
